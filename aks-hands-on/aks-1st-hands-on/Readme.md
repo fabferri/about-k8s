@@ -42,7 +42,7 @@ If you don't specify a registry hostname, Kubernetes assumes that you reference 
 
 **The following setup has been verified in Windows host with Azure CLI locally installed.**
 
-### <a name="login in azure subscription"></a> STEP1: login and connect to the target Azure subscription
+### <a name="login in azure subscription"></a> STEP 1: login and connect to the target Azure subscription
 - `az login --use-device-code`      - login in Azure with the device authentication code in the web browser
 - `az account list --output table`  - Get a list of available subscriptions <br>
 - `az account show`                 - Show the subscription you are currently using <br>
@@ -56,14 +56,14 @@ $SubId="$(az account list --query "[?name=='AzureDemo'].id" --output tsv)"
 az account set --subscription $SubId
 ```
 
-### <a name="create a resource group"></a> STEP2: set variables and create a resource group
+### <a name="create a resource group"></a> STEP 2: set variables and create a resource group
 ```bash
 $location="uksouth"
 $rg="k8-1"
 az group create --name $rg --location $location
 ```
 
-### <a name="create an AKS cluster"></a> STEP3: Create an AKS cluster
+### <a name="create an AKS cluster"></a> STEP 3: Create an AKS cluster
 ```bash
 az aks create -g $rg -n aks1 --enable-managed-identity --node-count 1 --generate-ssh-keys
 ```
@@ -84,7 +84,7 @@ See the list:
 az aks list -o table
 ```
 
-### <a name="install kubectl"></a> STEP4: install kubectl locally. This is one time operation
+### <a name="install kubectl"></a> STEP 4: install kubectl locally. This is one time operation
 ```bash
 az aks install-cli
 ```
@@ -104,7 +104,7 @@ kubectl version --client
 kubectl version --client --output=yaml
 ```
 
-### <a name="configure kubectl"></a> STEP5: Configure kubectl to connect to your Kubernetes cluster
+### <a name="configure kubectl"></a> STEP 5: Configure kubectl to connect to your Kubernetes cluster
 ```bash
 az aks get-credentials --resource-group $rg --name aks1
 ```
@@ -127,13 +127,13 @@ The **kubectl config file** is a configuration file containing the following inf
 - `kubectl config delete-context <CLUSTER_NAME>` - Delete a context
 
 
-### <a name="connecto to th AKS cluster"></a> STEP6: Verify the connection to your cluster 
+### <a name="connecto to th AKS cluster"></a> STEP 6: Verify the connection to your cluster 
 This command returns a list of the cluster nodes:
 ```bash
 kubectl get nodes
 ```
 
-### <a name="deploy the application"></a> STEP7: deploy the application using a manifest file
+### <a name="deploy the application"></a> STEP 7: deploy the application using a manifest file
 Create a file named **nginx.yaml** and paste the content:
 ```yaml
 apiVersion: apps/v1
@@ -212,7 +212,7 @@ List the Pods created by the deployment:
 kubectl get pods -l app=nginx
 ```
 
-### <a name="check the application"></a> STEP8: Test the application
+### <a name="check the application"></a> STEP 8: Test the application
 Check the status of the deployed pods:
 ```bash
 kubectl get pods -o wide
@@ -245,7 +245,7 @@ Start-Process http://$ServicePubIP
 ```
 it is visualized the nginx home-page.
 
-### <a name="scaling up the application"></a> STEP9: Scaling up the application by increasing the replica count
+### <a name="scaling up the application"></a> STEP 9: Scaling up the application by increasing the replica count
 Change the number of pods from 2 to 3 and from 3 to 5:
 ```bash
 kubectl scale --replicas=3 deployment.apps/nginx-deployment
@@ -263,7 +263,7 @@ Scaling down the Deployment works the same way as scaling up:
 kubectl scale --replicas=2 deployment/nginx-deployment
 ```
 
-### <a name="delete deployment and resource group"></a> STEP11: Deleting a deployment and Resource Group
+### <a name="delete deployment and resource group"></a> STEP 10: Deleting a deployment and Resource Group
 ```bash
 kubectl delete deployment nginx-deployment
 ```
@@ -280,7 +280,7 @@ Delete the resource group:
 az group delete --name $rg --yes --no-wait
 ```
 
-### <a name="AKS cluster with ARM template"></a> STEP12: Spin up an AKS cluster with ARM template
+### <a name="AKS cluster with ARM template"></a> STEP 11: Spin up an AKS cluster with ARM template
 To spin up the ARM template **k8s.json** run the script: **k8s.ps1** <br>
 When completed, run the command to see the cluster:
 ```bash
