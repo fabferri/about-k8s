@@ -72,7 +72,7 @@ The following setup has been done in Windows host with Azure CLI installed local
 - `az aks get-credentials -g $rg -n $clusterName` - Configure kubectl to connect to the kubernetes cluster
 - `az aks update -g $rg -n $clusterName --enable-file-driver ` - Enable CSI storage drivers on an existing cluster <br>
 
-The powershell script **01-az-k8s-deployment.ps1** create the resource group, the Kubernetes cluster and the credential to connect to the Kubernetes cluster. After the custer creation. The creation of Kubernets cluster is executed by the command <br> 
+The powershell script **01-az-k8s-deployment.ps1** creates the resource group, the Kubernetes cluster and the credential to connect to the Kubernetes cluster. After the custer creation. The creation of Kubernets cluster is executed by the command <br> 
 `az aks create -g $rg -n $clusterName --enable-managed-identity --node-count 1 --ssh-key-value $SSH`. <br>
 The parameter **--node-count <NUMBER_NODE>** define the number of nodes in the cluster. <br>
 
