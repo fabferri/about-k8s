@@ -68,17 +68,16 @@ The following setup has been done in Windows host with Azure CLI installed local
 - `az account list --query "[?name=='AzureDemo'].id" --output tsv` - Get the Azure subscription ID
 - `$SubId="$(az account list --query "[?name=='AzureDemo'].id" --output tsv)"; az account set --subscription $SubId`  - Change the active subscription (powershell)
 - `az aks install-cli` - (<ins>Optional</ins>) - One time operation if you do not have aks command installed 
-- `az aks create -g $rg -n $clusterName --enable-managed-identity --node-count 1 --ssh-key-value $SSH` - Create the Kubernetes cluster
+- `az aks create -g $rg -n $clusterName --enable-managed-identity --node-count 2 --ssh-key-value $SSH` - Create the Kubernetes cluster with two nodes
 - `az aks get-credentials -g $rg -n $clusterName` - Configure kubectl to connect to the kubernetes cluster
 - `az aks update -g $rg -n $clusterName --enable-file-driver ` - Enable CSI storage drivers on an existing cluster <br>
 
-The powershell script **01-az-k8s-deployment.ps1** creates the resource group, the Kubernetes cluster and the credential to connect to the Kubernetes cluster. After the custer creation. The creation of Kubernets cluster is executed by the command <br> 
-`az aks create -g $rg -n $clusterName --enable-managed-identity --node-count 1 --ssh-key-value $SSH`. <br>
-The parameter **--node-count <NUMBER_NODE>** define the number of nodes in the cluster. <br>
+The powershell script **01-az-k8s-deployment.ps1** creates the resource group, the Kubernetes cluster and the credential to connect to the Kubernetes cluster. 
 
 After cluster creation: 
 - `az aks list -o table`  - List the properties of Kubernetes cluster: name, Azure region, Resource Group, Kubernetes Version, etc.
 - `kubectl get nodes -o wide` - List of the nodes in Kubernetes cluster 
+
 ```
 kubectl get nodes -o wide
 NAME                                STATUS   ROLES   AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME    
