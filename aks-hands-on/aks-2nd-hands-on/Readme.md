@@ -56,7 +56,7 @@ The PV access mode are:
 - **ReadWriteOncePod** (RWOP): the volume can be mounted as read-write by a single Pod. Use ReadWriteOncePod access mode if you want to ensure that only one pod across the whole cluster can read that PVC or write to it.
 
 
-### <a name="login in azure subscription"></a>1. Login in the Azure subscription and create the Kubernetes cluster
+### <a name="login in azure subscription"></a>STEP 1: Login in the Azure subscription and create the Kubernetes cluster
 The following setup has been done in Windows host with Azure CLI installed locally.
 
 - `az login --use-device-code` - login with the device authentication code in the web browser
@@ -94,7 +94,7 @@ aks-nodepool1-31961289-vmss000001   Ready    agent   45m   v1.27.7   10.224.0.4 
 > - `kubectl config delete-context <CLUSTER_NAME>` - Delete a context
 
 
-### <a name="Manifest files description"></a>2. Manifest files description
+### <a name="Manifest files description"></a>STEP 2: Manifest files description
 
 - **01-storage-class.yaml**: CSI storage classes with **provisioner: file.csi.azure.com** uses Azure Standard Storage to create an Azure file share. The reclaim policy for the storage class ensures that the underlying Azure files share is deleted when the respective PV is deleted.
 - **02-pvc.yaml**: it creates a PersistentVolumeClaim (PVC).  PersistentVolumeClaims allow a user to consume abstract storage resources (PersistentVolumes). The PV is named in this case **my-azurefile**.
@@ -200,7 +200,7 @@ kubectl cp index.html default/nginx-deployment-546cc48f47-27kwd:/usr/share/nginx
 ```
 You can now check out the presence of index.html file in Azure file and verifying with web browser the successful connection to the nginx through public IP.
 
-### <a name="Manifest files description"></a>2. Reference
+### <a name="Manifest files description"></a> Reference
 [Configure a Pod to Use a PersistentVolume for Storage](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)
 
 <br>
