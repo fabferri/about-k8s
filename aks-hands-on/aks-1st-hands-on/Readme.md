@@ -42,6 +42,13 @@ If you don't specify a registry hostname, Kubernetes assumes that you reference 
 
 **The following setup has been verified in Windows host with Azure CLI locally installed.**
 
+| File name            | Description                                                                |
+| -------------------- | -------------------------------------------------------------------------- |
+| **k8s.ps1**          | powershell to select the Azure subscription ID and deploy the AKS cluster  |
+| **k8s.json**         | ARM template with AKS specifications                                       |
+| **nginx.yaml**       | manifest file to deploy the POD and containers in AKS cluster              |
+
+
 ### <a name="login in azure subscription"></a> STEP 1: login and connect to the target Azure subscription
 - `az login --use-device-code`      - login in Azure with the device authentication code in the web browser
 - `az account list --output table`  - Get a list of available subscriptions <br>
