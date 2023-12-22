@@ -50,7 +50,7 @@ After cluster creation:
 
 
 
-## <a name="deploy the application"></a>1. Check nodes, pods and services
+### <a name="deploy the application"></a>2. Check nodes, pods and services
 To retrieve the pods scheduled on each node in a Kubernetes cluster, you can use the `kubectl get pods --all-namespaces -o wide`
 Without specification of namespace the default namespace is selected:
 `kubectl get pods --namespace default -o wide` and  `kubectl get pods -o wide` gives the same output.
@@ -81,7 +81,7 @@ nginx-deployment-76d9685c48-csjtm   1/1     Running   0          3h4m   app=ngin
 
 ```
 
-## <a name="Kubernetes Limits and Requests"></a>2. Kubernetes Limits and Requests
+### <a name="Kubernetes Limits and Requests"></a>3. Kubernetes Limits and Requests
 
 When a Pod is created, the Kubernetes scheduler selects a node for the Pod to run on. Each node has a maximum capacity for each of the resource types: the amount of CPU and memory it can provide for Pods. The scheduler ensures that, for each resource type, the sum of the resource requests of the scheduled containers is less than the capacity of the node. Note that although actual memory or CPU resource usage on nodes is very low, the scheduler will refuse to place a Pod on a node if the capacity check fails.<br>
 When you specify a Pod, you can **optionally** specify how much of each resource a container needs. The most common resources to specify are CPU and memory (RAM).
@@ -167,7 +167,7 @@ Now that we’ve specified CPU limits for all three pods, PODs 2 and 3 will be t
 
 
 
-## <a name="Kubernetes Limits and Requests"></a>3. Specify a CPU request that is too big for the Nodes
+### <a name="Kubernetes Limits and Requests"></a>4. Specify a CPU request that is too big for the Nodes
 The manifest file **cpu-request-limit.yaml** create a Pod that has a CPU request so big that it exceeds the capacity of any Node in the cluster. <br>
 The configuration file for a Pod that has one Container. The Container requests 100 CPU, which exceed the capacity of any Node in the cluster.
 
@@ -209,7 +209,7 @@ kubectl delete namespace cpu-example
 
 
 
-## <a name="Kubernetes Limits and Requests"></a>4. Apply the manifest file nginx-resource-limit.yaml
+### <a name="Kubernetes Limits and Requests"></a>5. Apply the manifest file nginx-resource-limit.yaml
 ```bash
 kubectl apply -f nginx-resource-limit.yaml
 ```
@@ -272,7 +272,7 @@ In the manifest **nginx-resource-limit.yaml**
 To perform a probe, the kubelet executes the command HTTP GET to the server that is running in the target container and listening on port 880. If the command succeeds, it returns 0, and the kubelet considers the container to be alive and healthy. If the command returns a non-zero value, the kubelet kills the container and restarts it. <br>
 Any code greater than or equal to 200 and less than 400 indicates success. Any other code indicates failure.
 
-## <a name="Kubernetes liveness probes"></a>5. ConfigMaps
+### <a name="Kubernetes liveness probes"></a>6. ConfigMaps
 A **ConfigMap** is a dictionary of configuration settings. This dictionary consists of key-value pairs of strings. Kubernetes provides these values to the containers. Like with other dictionaries the key lets you get and set the configuration value. <br>
 Use a **ConfigMap** allows to keep your application code separate from your configuration.
 <br> <br>
@@ -316,7 +316,7 @@ Containers in the Pod reference the ConfigMap:
 
 [![7]][7]
 
-## <a name="delete the Kubernetes cluster"></a>6. Delete the Kubernetes cluster
+### <a name="delete the Kubernetes cluster"></a>7. Delete the Kubernetes cluster
 
 Delete all the cluster objects created: <br>
 
