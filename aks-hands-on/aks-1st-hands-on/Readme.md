@@ -89,7 +89,7 @@ az aks list -o table
 az aks install-cli
 ```
 Command output: <br>
-<p style="font-size: 10px;">
+<h6>
 The detected architecture of current device is "amd64", and the binary for "amd64" will be downloaded. If the detection is wrong, please download and install the binary corresponding to the appropriate architecture.
 No version specified, will get the latest version of kubectl from "https://storage.googleapis.com/kubernetes-release/release/stable.txt"
 Downloading client to "C:\Users\USERNAME_FOLDER\\.azure-kubectl\kubectl.exe" from "https://storage.googleapis.com/kubernetes-release/release/v1.28.4/bin/windows/amd64/kubectl.exe"
@@ -98,7 +98,7 @@ No version specified, will get the latest version of kubelogin from "https://api
 Downloading client to "C:\Users\USERNAME_FOLDER\AppData\Local\Temp\tmprxe3487l\kubelogin.zip" from "https://github.com/Azure/kubelogin/releases/download/v0.0.34/kubelogin.zip"
 Moving binary to "C:\Users\USERNAME_FOLDER\\.azure-kubelogin\kubelogin.exe" from "C:\Users\USERNAME_FOLDER\AppData\Local\Temp\tmprxe3487l\bin\windows_amd64\kubelogin.exe"
 The installation directory "C:\Users\USERNAME_FOLDER\\.azure-kubelogin" has been successfully appended to the user path, the configuration will only take effect in the new command sessions. Please re-open the command window.
-</p>
+</h6>
 
 Check the kubectl version:
 ```bash
