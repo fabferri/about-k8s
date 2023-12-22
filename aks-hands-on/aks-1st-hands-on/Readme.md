@@ -46,7 +46,7 @@ If you don't specify a registry hostname, Kubernetes assumes that you reference 
 | -------------------- | -------------------------------------------------------------------------- |
 | **k8s.ps1**          | powershell to select the Azure subscription ID and deploy the AKS cluster  |
 | **k8s.json**         | ARM template with AKS specifications                                       |
-| **nginx.yaml**       | manifest file to deploy the POD and containers in AKS cluster              |
+| **nginx.yaml**       | manifest file to deploy the PODs and containers in AKS cluster             |
 
 
 ### <a name="login in azure subscription"></a> STEP 1: login and connect to the target Azure subscription
