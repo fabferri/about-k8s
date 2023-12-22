@@ -209,7 +209,7 @@ kubectl delete namespace cpu-example
 
 
 
-## <a name="Kubernetes Limits and Requests"></a>4. Apply the manifest file test4.yaml
+## <a name="Kubernetes Limits and Requests"></a>4. Apply the manifest file nginx-resource-limit.yaml
 ```bash
 kubectl apply -f nginx-resource-limit.yaml
 ```
