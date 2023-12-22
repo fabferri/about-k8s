@@ -48,6 +48,7 @@ If you don't specify a registry hostname, Kubernetes assumes that you reference 
 | **k8s.json**         | ARM template with AKS specifications                                       |
 | **nginx.yaml**       | manifest file to deploy the PODs and containers in AKS cluster             |
 
+<br> <br> <br>
 
 ### <a name="login in azure subscription"></a> STEP 1: login and connect to the target Azure subscription
 - `az login --use-device-code`      - login in Azure with the device authentication code in the web browser
