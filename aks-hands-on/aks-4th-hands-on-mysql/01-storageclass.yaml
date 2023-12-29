@@ -1,0 +1,17 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: mysql-sc-azurefile
+provisioner: file.csi.azure.com
+allowVolumeExpansion: true
+mountOptions:
+  - file_mode=0777
+  - mfsymlinks
+  - uid=999
+  - gid=999
+  - dir_mode=0777
+  - actimeo=30
+  - cache=strict
+  - nobrl
+parameters:
+  skuName: Standard_LRS
