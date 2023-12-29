@@ -17,7 +17,7 @@ editor="fabferri"/>
    ms.author="fabferri" />
 
 # Azure Kubernetes Service (AKS): 4th hands-on with MySQL
-The hands-on is about the deployment of MySQL database instance on AKS, using a Persistent Volume dynamically deployed with CSI driver for Azure files. <br>
+The 4th hands-on is about the deployment of MySQL database instance on AKS, using a Persistent Volume dynamically deployed with CSI driver for Azure files. <br>
 
 ### <a name="login in azure subscription"></a> STEP 1: Login in the Azure subscription and create the Kubernetes cluster
 The following setup has been done in Windows host with Azure CLI installed locally.
