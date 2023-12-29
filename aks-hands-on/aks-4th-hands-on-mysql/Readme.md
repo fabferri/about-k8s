@@ -44,7 +44,7 @@ After cluster creation:
 - `kubectl config current-context` - Find the current context
 <br>
 
-### <a name="create a storage class"></a> STEP 1: create a storage class
+### <a name="create a storage class"></a> STEP 2: create a storage class
 The CSI is a standard for exposing arbitrary block and file storage systems to containerized workloads on Kubernetes. <br>
 In Azure Kubernetes Service (AKS) the Container Storage Interface (CSI) driver allows to manage the Azure file shares. <br>
 Using CSI drivers in AKS avoids having to touch the core Kubernetes code and wait for its release cycles. <br>
@@ -92,14 +92,14 @@ To assign the right ownership to the Persistent Volume, the storage class matche
 [**Note: A setting uid=0 and gid=0 in Storage Class will assign the root user ownership to the Persistent Volume**] <br>
 
 
-### <a name="Persistent Volume Claim"></a> STEP 2: Persistent Volume Claim
+### <a name="Persistent Volume Claim"></a> STEP 3: Persistent Volume Claim
 - A PVC is used to automatically provision storage based on a storage class created in STEP1. A PVC can use one of the pre-created storage classes or a user-defined storage class to create an Azure files share for the desired SKU and size. 
 - The Persistent Volume Claim (PVC) customize the amount of allocated storage requested from the storage class created in STEP 1.
 - When you create a pod definition, the PVC is specified to request the desired storage.
 The second task is to apply the **02-pvc.yaml** manifest file.
 
 
-### <a name="connecto to the AKS cluster"></a> STEP 3: Verify the connection to your cluster 
+### <a name="connecto to the AKS cluster"></a> STEP 4: Deployment of MySQL
 The third task is to create the deployment specified in the **03-mysql-deployment.yaml** manifest file.
 ```yaml
 apiVersion: apps/v1
@@ -147,29 +147,19 @@ spec:
 
 ```
 
-### <a name="check the POD status"></a> STEP 4: check the deployment status
+### <a name="check the POD status"></a> STEP 5: check the deployment status
+Run the commands
 
-run the command
-kubectl apply -f mongo-secret.yaml
-kubectl get secret
-
-
-Apply the **mongo.yaml**:
-kubectl apply -f mongodb.yaml
-kubectl get all
-
-it is visualized the pod, the deployment and replicaset
-
+```console
 kubectl get pod --watch
-kubectl describe pod <podName>
+kubectl describe pod <PodName>
+kubectl logs <PodName>
+```
+POD should be in running
 
-At the end the command
-kubectl get pod 
-should show the pod running
+### <a name="Connect to the container"></a> STEP 6: Connect to the POD
 
-### <a name="Connect to the container"></a> STEP 5: Connect to the POD
-
-kubectl exec --stdin --tty mysql-74f8bf98c5-bl8vv -- /bin/bash
+kubectl exec --stdin --tty <pod> -- /bin/bash
 
 ```console
 mysql -p
