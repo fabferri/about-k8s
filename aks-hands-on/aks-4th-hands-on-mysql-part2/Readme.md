@@ -17,8 +17,9 @@ editor="fabferri"/>
    ms.author="fabferri" />
 
 # Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 2
-In the [Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-4th-hands-on-mysql) is described how to deploy a MySQL using a Permant Volume with Azure file. <br>
-This hands-on assumes that you have run and understood the part 1. About the concepts of build-in StorageClass and Permant Volume see the [part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-4th-hands-on-mysql). <br>
+In the [Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-4th-hands-on-mysql-part1) is described how to deploy a MySQL using a Permant Volume with Azure file. This hands-on assumes that you have read and run the part 1 and yu have acquired the the concepts of build-in StorageClass and Permant Volume.
+<br>
+
 In this hands-on the MySQL root password is stored in the **03-mysql-secret.yaml** manifest file.
 
 
