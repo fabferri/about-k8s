@@ -105,29 +105,29 @@ The third task is to create the deployment specified in the **03-mysql-deploymen
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql     # The name "mysql" is assigned to this Deployment
-spec:             # This section describes the specifications for the Deployment.
-  selector:       # It specifies how the Deployment selects which Pods to manage.
-    matchLabels:  # This section defines the labels that the Deployment uses to select Pods to manage
-      app: mysql  # The Deployment selects Pods with the label "app" equal to "mysql."
+  name: mysql        # The name "mysql" is assigned to this Deployment
+spec:                # This section describes the specifications for the Deployment.
+  selector:          # It specifies how the Deployment selects which Pods to manage.
+    matchLabels:     # This section defines the labels that the Deployment uses to select Pods to manage
+      app: mysql     # The Deployment selects Pods with the label "app" equal to "mysql."
   strategy:
-    type: Recreate # It defines the update strategy for the Deployment. “Recreate,” meaning the existing Pods are terminated and new ones are created during updates.
-  template:        # This section describes the Pod template for the Deployment.
+    type: Recreate   # It defines the update strategy for the Deployment. “Recreate,” meaning the existing Pods are terminated and new ones are created during updates.
+  template:          # This section describes the Pod template for the Deployment.
     metadata:
       labels:
         app: mysql
     spec:
-      containers:        # This is an array of containers running in the Pod. In this case, there is one container.
-      - image: mysql:8.2 # It specifies the Docker image to use for the container, which is the 8.2 version of MySQL.
-        name: mysql      # The name of the container is "mysql"
-        env:             # This section defines environment variables for the container.
+      containers:              # This is an array of containers running in the Pod. In this case, there is one container.
+      - image: mysql:8.2       # It specifies the Docker image to use for the container, which is the 8.2 version of MySQL.
+        name: mysql            # The name of the container is "mysql"
+        env:                   # This section defines environment variables for the container.
         - name: MYSQL_ROOT_PASSWORD
-          value: 'test***12345'   # MySQL root password in cleartext between ''
+          value: 'test***12345'           # MySQL root password in cleartext between ''
         ports:
-        - containerPort: 3306  # Port 3306 is opened for MySQL connections.
+        - containerPort: 3306             # Port 3306 is opened for MySQL connections.
           name: mysql
         volumeMounts:                     # This section defines where to mount volumes in the container.
-        - name: mysql-persistent-storage  #  It specifies the volume name
+        - name: mysql-persistent-storage  # It specifies the volume name
           mountPath: /var/lib/mysql       # The path within the container where the volume will be mounted. This is typically the location where MySQL stores its data.
       volumes:                            # This section specifies the volumes to be used in the Pod.
       - name: mysql-persistent-storage    # The name of the volume matches the one specified in volumeMounts.
