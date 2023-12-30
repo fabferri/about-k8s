@@ -16,7 +16,7 @@ editor=""/>
    ms.date="11/12/2023"
    ms.author="fabferri" />
 
-# Azure Kubernetes Service (AKS): 3rd hands-on
+# Azure Kubernetes Service (AKS): 3rd hands-on - Limits and Requests
 
 ### <a name="login in azure subscription"></a> STEP 1: Login in the Azure subscription and create the Kubernetes cluster
 The following setup has been done in Windows host with Azure CLI installed locally.
