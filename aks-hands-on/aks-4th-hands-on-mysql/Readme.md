@@ -148,34 +148,116 @@ spec:
 ```
 
 ### <a name="check the POD status"></a> STEP 5: check the deployment status
-Run the commands
+After applying the manifest files:
+
+    kubectl apply -f 01-storageclass.yaml
+    kubectl apply -f 02-pvc.yaml
+    kubectl apply -f 03-mysql-deployment.yaml
+
+Run the commands for checking the deployment:
 
 ```console
+kubectl get pod
 kubectl get pod --watch
 kubectl describe pod <PodName>
 kubectl logs <PodName>
 ```
-POD should be in running
+POD should be in running <br>
+
+For log details see the file: **logs.txt**
+
 
 ### <a name="Connect to the container"></a> STEP 6: Connect to the POD
+Login in the container: 
+```console
+kubectl exec --stdin --tty <PodName> -- /bin/bash 
+```
+<br>
 
-kubectl exec --stdin --tty <pod> -- /bin/bash
+Inside the container check the volume for the mount point **/var/lib/mysql**
+```
+bash-4.4# df -h
+Filesystem                                                                                Size  Used Avail Use% Mounted on
+overlay                                                                                   124G   23G  102G  19% /
+tmpfs                                                                                      64M     0   64M   0% /dev
+/dev/root                                                                                 124G   23G  102G  19% /etc/hosts
+shm                                                                                        64M     0   64M   0% /dev/shm
+//f85c493fa84f54ab1b74613.file.core.windows.net/pvc-ec3e10cc-a29e-4477-9e67-daf36d04e516   60G  193M   60G   1% /var/lib/mysql
+tmpfs                                                                                     5.3G   12K  5.3G   1% /run/secrets/kubernetes.io/serviceaccount
+tmpfs                                                                                     3.9G     0  3.9G   0% /proc/acpi
+tmpfs                                                                                     3.9G     0  3.9G   0% /proc/scsi
+tmpfs                                                                                     3.9G     0  3.9G   0% /sys/firmware
+```
+the folder **/var/lib/mysql** is mounted to the 60Gi PVC associated with the Azure file. 
+
+<br>
+Inside the container, connect to MySQL:
 
 ```console
-mysql -p
+bash-4.4# mysql -p
+```
+When prompted, enter the password
+
+```console
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql>
 ```
 
-When prompted, enter the password:
-SHOW DATABASES;
+Create and run an ubuntu image, version 22.04:
+```bash
+kubectl run myubuntu --image ubuntu:22.04 --command -- sleep 100000000000000
+```
+
+Login to the ubuntu container:
+```bash
+kubectl exec --stdin --tty myubuntu -- /bin/bash 
+```
+
+Inside the ubuntu container install the mysql client:
+```bash
+apt update
+apt install mysql-client
+```
+
+Inside the ubuntu container check the MySQL client version: `mysql --version` <br>
+Connect to the MySQL server container:
+
+```Console
+mysql -u root -p'test***12345' -h 10.0.120.138 -P 3306 
+```
+
+> [!NOTE] 
+> - **no space after -p**
+> - The **root** password to access to MySQL is in the file **03-mysql-deployment.yaml**
+> - you can get the IP Address and TCP port of MySQL server container by command:
+```console
+kubectl get service
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+kubernetes   ClusterIP   10.0.0.1       <none>        443/TCP    18m
+mysql        ClusterIP   10.0.120.138   <none>        3306/TCP   9m36s
+```
+
+
 
 ### <a name="Caveats"></a>Caveats
 - This specific deployment is intended for a single MySQL instance, implying that it cannot be expanded to multiple Pods; it operates exclusively with one Pod.
 - This deployment lacks support for rolling updates, necessitating the constant configuration of spec.strategy.type as "Recreate".
+- The manifest file **03-mysql-deployment.yaml** does not follow the best pratice becasue the passoword of user **root** in MySQL should be written in specific manifest file
 
-## <a name="Caveats"></a> Command list
+## <a name="Command list"></a> Command list
 
 ### kubectl apply commands in order
-    kubectl apply -f 01-storageclass.yaml <br>
+    kubectl apply -f 01-storageclass.yaml
     kubectl apply -f 02-pvc.yaml
     kubectl apply -f 03-mysql-deployment.yaml
 
@@ -187,6 +269,9 @@ SHOW DATABASES;
     kubectl get all | grep mysql
 
 ### kubectl debugging commands
-    kubectl describe pod mysql-deployment-xxxxxx
+    kubectl describe pod mysql-xxxxxx
     kubectl describe service mysql-service
-    kubectl logs mysql-xxxxxx
+    kubectl logs mysql
+
+### kubectl delete all the deployment
+    kubectl delete -f .

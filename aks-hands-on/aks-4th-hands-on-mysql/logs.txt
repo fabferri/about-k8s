@@ -1,0 +1,133 @@
+> kubectl get pod
+NAME                     READY   STATUS    RESTARTS   AGE
+mysql-74bd6c5444-l6r8j   1/1     Running   0          2m18s
+
+
+> kubectl logs
+2023-12-29 23:16:28+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.2.0-1.el8 started.
+2023-12-29 23:16:29+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-12-29 23:16:29+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.2.0-1.el8 started.
+2023-12-29 23:16:30+00:00 [Note] [Entrypoint]: Initializing database files
+2023-12-29T23:16:30.428379Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+2023-12-29T23:16:30.430211Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2023-12-29T23:16:30.430302Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.2.0) initializing of server in progress as process 79
+2023-12-29T23:16:30.562307Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-12-29T23:16:35.892211Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-12-29T23:16:51.455707Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+2023-12-29T23:17:08.986930Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+2023-12-29 23:17:09+00:00 [Note] [Entrypoint]: Database files initialized
+2023-12-29 23:17:09+00:00 [Note] [Entrypoint]: Starting temporary server
+2023-12-29T23:17:09.056983Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2023-12-29T23:17:09.288238Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2023-12-29T23:17:09.323675Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.2.0) starting as process 121
+2023-12-29T23:17:09.554107Z 0 [Warning] [MY-000054] [Server] World-writable config file '/var/lib/mysql/auto.cnf' is ignored.
+2023-12-29T23:17:09.583578Z 0 [Warning] [MY-010107] [Server] World-writable config file '/var/lib/mysql/auto.cnf' has been removed.
+2023-12-29T23:17:09.594936Z 0 [Warning] [MY-010075] [Server] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 63e44c7b-a6a0-11ee-876e-7a0f2135d072.
+2023-12-29T23:17:09.659353Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-12-29T23:17:13.886092Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-12-29T23:17:15.158872Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-12-29T23:17:15.158909Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-12-29T23:17:15.193643Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2023-12-29T23:17:15.290831Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2023-12-29T23:17:15.291626Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.2.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2023-12-29T23:17:15.294146Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2023-12-29 23:17:15+00:00 [Note] [Entrypoint]: Temporary server started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+
+2023-12-29 23:17:18+00:00 [Note] [Entrypoint]: Stopping temporary server
+2023-12-29T23:17:18.380991Z 10 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.2.0).
+2023-12-29T23:17:25.336689Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.2.0)  MySQL Community Server - GPL.
+2023-12-29T23:17:25.341151Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2023-12-29 23:17:25+00:00 [Note] [Entrypoint]: Temporary server stopped
+
+2023-12-29 23:17:25+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+
+2023-12-29T23:17:25.414538Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2023-12-29T23:17:25.647111Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2023-12-29T23:17:25.673191Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.2.0) starting as process 1
+2023-12-29T23:17:25.797358Z 0 [Warning] [MY-000054] [Server] World-writable config file '/var/lib/mysql/auto.cnf' is ignored.
+2023-12-29T23:17:25.806920Z 0 [Warning] [MY-010107] [Server] World-writable config file '/var/lib/mysql/auto.cnf' has been removed.
+2023-12-29T23:17:25.811089Z 0 [Warning] [MY-010075] [Server] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 6d8eb011-a6a0-11ee-8194-7a0f2135d072.
+2023-12-29T23:17:25.849418Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-12-29T23:17:30.147187Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-12-29T23:17:31.376626Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-12-29T23:17:31.376668Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-12-29T23:17:31.406568Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2023-12-29T23:17:31.571274Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2023-12-29T23:17:31.571502Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.2.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+
+
+> kubectl describe pod mysql-74bd6c5444-l6r8j
+Name:             mysql-74bd6c5444-l6r8j
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             aks-nodepool1-13783273-vmss000000/10.224.0.4
+Start Time:       Fri, 29 Dec 2023 23:16:15 +0000
+Labels:           app=mysql
+                  pod-template-hash=74bd6c5444
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.11
+IPs:
+  IP:           10.244.0.11
+Controlled By:  ReplicaSet/mysql-74bd6c5444
+Containers:
+  mysql:
+    Container ID:   containerd://8692a872bc424de672f13b6f8c25cc377a97e3d610ee195874524e9df348af72
+    Image:          mysql:8.2
+    Image ID:       docker.io/library/mysql@sha256:4ef30b2c11a3366d7bb9ad95c70c0782ae435df52d046553ed931621ea36ffa5
+    Port:           3306/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 29 Dec 2023 23:16:28 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      MYSQL_ROOT_PASSWORD:  test***12345
+    Mounts:
+      /var/lib/mysql from mysql-persistent-storage (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-scg29 (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  mysql-persistent-storage:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  mysql-pv-claim
+    ReadOnly:   false
+  kube-api-access-scg29:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason            Age    From               Message
+  ----     ------            ----   ----               -------
+  Warning  FailedScheduling  8m31s  default-scheduler  0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling..
+  Warning  FailedScheduling  8m15s  default-scheduler  0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling..
+  Normal   Scheduled         8m12s  default-scheduler  Successfully assigned default/mysql-74bd6c5444-l6r8j to aks-nodepool1-13783273-vmss000000
+  Normal   Pulling           8m12s  kubelet            Pulling image "mysql:8.2"
+  Normal   Pulled            8m     kubelet            Successfully pulled image "mysql:8.2" in 11.933486649s (11.93351215s including waiting)
+  Normal   Created           8m     kubelet            Created container mysql
+  Normal   Started           8m     kubelet            Started container mysql
+
+
+> kubectl get service
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+kubernetes   ClusterIP   10.0.0.1       <none>        443/TCP    18m
+mysql        ClusterIP   10.0.120.138   <none>        3306/TCP   9m36s
