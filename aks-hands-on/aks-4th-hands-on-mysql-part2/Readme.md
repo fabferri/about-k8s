@@ -60,7 +60,7 @@ The manifest **04-mysql-deployment.yaml** reference the MySQL docker image in do
 As reported in the dockerhub documentation: <br>
 When you start the mysql image, you can adjust the configuration of the MySQL instance by passing one or more environment variables.
 **MYSQL_ROOT_PASSWORD** : it is a mandatory environment variable  and specifies the password that will be set for the MySQL root superuser account. <br>
-In the Secret manifest file, the field password specifies the password of the MySQL root superuser account.
+In the Secret manifest file **03-mysql-secret.yaml**, the field **password** specifies the password of the MySQL root superuser account.
 
 ### <a name="check the POD status"></a>4: Check the deployment status
 Run the commands for checking the deployment:
