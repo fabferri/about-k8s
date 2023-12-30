@@ -19,6 +19,8 @@ editor="fabferri"/>
 # Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 1
 The 4th hands-on is about the deployment of MySQL database instance on AKS, using a Persistent Volume dynamically deployed with CSI driver for Azure files. <br>
 
+[![1]][1]
+
 ### <a name="login in azure subscription"></a> STEP 1: Login in the Azure subscription and create the Kubernetes cluster
 The following setup has been done in Windows host with Azure CLI installed locally.
 
@@ -93,10 +95,11 @@ To assign the right ownership to the Persistent Volume, the storage class matche
 
 
 ### <a name="Persistent Volume Claim"></a> STEP 3: Persistent Volume Claim
-- A PVC is used to automatically provision storage based on a storage class created in STEP1. A PVC can use one of the pre-created storage classes or a user-defined storage class to create an Azure files share for the desired SKU and size. 
+- A PVC is used to automatically provision storage based on a storage class created in STEP 1. A PVC can use one of the pre-created storage classes or a user-defined storage class to create an Azure files share for the desired SKU and size. 
 - The Persistent Volume Claim (PVC) customize the amount of allocated storage requested from the storage class created in STEP 1.
 - When you create a pod definition, the PVC is specified to request the desired storage.
 The second task is to apply the **02-pvc.yaml** manifest file.
+
 
 
 ### <a name="connecto to the AKS cluster"></a> STEP 4: Deployment of MySQL
@@ -281,3 +284,9 @@ mysql        ClusterIP   10.0.120.138   <none>        3306/TCP   9m36s
 
 `Tags: aks` <br>
 `date: 19-12-23`
+
+<!--Image References-->
+
+[1]: ./media/01.png "AKS diagram"
+
+<!--Link References-->
