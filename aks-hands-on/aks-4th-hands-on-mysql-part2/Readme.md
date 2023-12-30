@@ -33,7 +33,7 @@ The powershell script **az-k8s-deployment.ps1** create the resource group, the A
     kubectl apply -f 04-mysql-deployment.yaml
 
 
-### <a name="create a storage class"></a>3. secrets
+### <a name="create a storage class"></a>3. Secrets
 Secrets are specifically intended to hold confidential data. When creating a Secret, you can specify its type using the type field of the Secret resource. <br>
 Kubernetes provides several built-in secret types; i.e.:
 - **Opaque**: it is a built-in secret type for arbitrary user-defined data
@@ -53,9 +53,15 @@ stringData:
   username: root            # required field for kubernetes.io/basic-auth
   password: test***12345    # required field for kubernetes.io/basic-auth
 ```
-In type:kubernetes.io/basic-auth using the **stringData** provide the values of **username** and **password** cleartext.
+In **type:kubernetes.io/basic-auth** using the **stringData** requires as mandatory the fields **username** and **password** in cleartext format.
 
-### <a name="check the POD status"></a>4: check the deployment status
+The manifest **04-mysql-deployment.yaml** reference the MySQL docker image in dockerhub: https://hub.docker.com/_/mysql <br>
+As reported in the dockerhub documentation: <br>
+When you start the mysql image, you can adjust the configuration of the MySQL instance by passing one or more environment variables.
+**MYSQL_ROOT_PASSWORD** : it is a mandatory environment variable  and specifies the password that will be set for the MySQL root superuser account. <br>
+In the Secret manifest file, the field password specifies the password of the MySQL root superuser account.
+
+### <a name="check the POD status"></a>4: Check the deployment status
 Run the commands for checking the deployment:
 
 ```console
