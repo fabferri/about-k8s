@@ -54,7 +54,7 @@ stringData:
   username: root            # required field for kubernetes.io/basic-auth
   password: test***12345    # required field for kubernetes.io/basic-auth
 ```
-In **type:kubernetes.io/basic-auth** using the **stringData** requires as mandatory the fields **username** and **password** in cleartext format.
+In **type:kubernetes.io/basic-auth**, utilization of **stringData** requires as mandatory the fields **username** and **password** in cleartext format.
 
 The manifest **04-mysql-deployment.yaml** reference the MySQL docker image in dockerhub: https://hub.docker.com/_/mysql <br>
 As reported in the dockerhub documentation: <br>
