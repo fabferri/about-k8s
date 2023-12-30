@@ -312,3 +312,7 @@ The most common Kubernetes objects you are likely to query are pods, services, d
 - **-o yaml** and **-o json** output the complete current state of the object (and thus usually includes more information than the original manifest files).
 - **-o jsonpath** allows you to select the information you want out of the full JSON of the -o json option using the jsonpath notation.
 - **-o go-template** allows you to apply Go templates for more advanced features.
+
+
+`Tags: AKS` <br>
+`date: 11-12-23`
