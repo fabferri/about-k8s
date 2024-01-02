@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS hand-on: 1st episode - imperative'
-description= "AKS hand-on: 1st episode - imperative"
+pageTitle= 'AKS hand-on episode 1: imperative'
+description= "AKS hand-on: episode 1: imperative"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor="fabferri"/>
    ms.date="19/12/2023"
    ms.author="fabferri" />
 
-# AKS hand-on: 1st episode - imperative
+# AKS hand-on episode 1: imperative
 
 **kubectl** is a Kubernetes command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
 The **kubectl** command-line tool supports several different ways to create and manage Kubernetes objects:

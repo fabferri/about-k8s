@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS hand-on: 2nd episode'
-description= "AKS hand-on: 2nd episode"
+pageTitle= 'AKS hand-on: episode 2'
+description= "AKS hand-on: episode 2"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor=""/>
    ms.date="11/12/2023"
    ms.author="fabferri" />
 
-# AKS hand-on: 2nd episode
+# AKS hand-on: episode 2
 Kubernetes objects are persistent entities in the Kubernetes system. A Kubernetes object is a "<ins>record of intent</ins>"--once you create the object, the Kubernetes system will constantly work to ensure that object exists. <br>
 By creating  objects, you're effectively telling the Kubernetes system what is your cluster's desired state. In Kubernetes the YAML manifest file defines the desire state. <br>
 

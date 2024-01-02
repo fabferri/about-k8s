@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS hand-on: 5th episode with MySQL'
-description= "AKS hand-on: 5th episode with MySQL"
+pageTitle= 'AKS hand-on episode 5: MySQL'
+description= "AKS hand-on episode 5: MySQL"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor="fabferri"/>
    ms.date="11/12/2023"
    ms.author="fabferri" />
 
-# AKS hand-on: 5th episode with MySQL - part 1
+# AKS hand-on episode 5: MySQL - part 1
 The 4th hands-on is about the deployment of MySQL database instance on AKS, using a Persistent Volume dynamically deployed with CSI driver for Azure files. <br>
 
 [![1]][1]
