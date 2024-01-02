@@ -1,7 +1,7 @@
 
 <properties
 pageTitle= 'AKS hand-on episode 1: imperative'
-description= "AKS hand-on: episode 1: imperative"
+description= "AKS hand-on episode 1: imperative"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -24,12 +24,12 @@ The **kubectl** command-line tool supports several different ways to create and 
 - **declarative**. A YAML (or JASON) file, named manifest, must contain a full definition of the objects. Objects configuration requires basic understanding of the object schema for writing correct YAML files.
 Using imperative command is faster and less prone to errors than declarative. <br>
 
-NOTE: the classification above is not accurate but enough for the hand-on purpose. For a better definition see the [official kubernetes documentation](https://kubernetes.io/).
+NOTE: the classification above is not accurate but enough for the hand-on purpose. For a better definition see the [official Kubernetes documentation](https://kubernetes.io/).
 
 The article walks you through some basic useful **kubectl** commands. <br>
 Below a list of commands discussed in this post
 - `kubectl run`: it is used only to creates 1 or more instances of a container image on your cluster.
-- `kubectl create`: it is used to create different type of kubernetes resources (i.e. deployments, replicasets, services, etc.)
+- `kubectl create`: it is used to create different type of Kubernetes resources (i.e. deployments, replicasets, services, etc.)
 
 Examples: <br>
 - `kubectl run mypod --image=nginx` : Create a pod with nginx image
@@ -41,7 +41,7 @@ Examples: <br>
 - `kubectl get deploy` : get the deployment
 
 Subcommands: <br>
-- `kubectl set` : modify the image in the depyment
+- `kubectl set` : modify the image in the deployment
 - `kubectl label`
 - `kubectl scale` : scale out/shrink the number of POD
 - `kubectl edit`
