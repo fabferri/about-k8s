@@ -1,8 +1,9 @@
 # Kubernetes hands-on and tests
 ## Repo structure
 - aks-hands-on
-   - [Azure Kubernetes Service (AKS): 1st hands-on](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-1st-hands-on)
-   - [Azure Kubernetes Service (AKS): 2nd hands-on](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-2nd-hands-on)
-   - [Azure Kubernetes Service (AKS): 3rd hands-on - Limits and Requests](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-3rd-hands-on)
-   - [Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-4th-hands-on-mysql-part1)
-   - [Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 2](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-4th-hands-on-mysql-part2)
+   - [AKS hand-on episode 1: imperative](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-01)
+   - [AKS hand-on: episode 2](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-02)
+   - [AKS hand-on episode 3: persistent storage](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-03)
+   - [AKS hands-on episode 4: Limits and Requests](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-04)
+   - [AKS hand-on episode 5: MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-05-mysql-part1)
+   - [AKS hand-on episode 5: MySQL - part 2](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-05-mysql-part2)
