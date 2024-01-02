@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS: 2nd hands-on'
-description= "AKS: 2nd hands-on"
+pageTitle= 'AKS hand-on: 3rd episode'
+description= "AKS hand-on: 3rd episode"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor=""/>
    ms.date="20/12/2023"
    ms.author="fabferri" />
 
-# Azure Kubernetes Service (AKS): 2nd hands-on
+# AKS hand-on: 3rd episode - persistent storage
 The hand-on discuss in Kubernetes about persistent storage and deployment. The nginx is created in two pods with web site in persistent storage. <br>
 
 A Kubernetes **StorageClass** is a Kubernetes storage mechanism that lets you dynamically provision persistent volumes (PV) in a Kubernetes cluster. Kubernetes administrators define classes of storage, and then pods can <ins>dynamically</ins> request the specific type of storage they need.

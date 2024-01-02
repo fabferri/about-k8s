@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS: 3rd hands-on'
-description= "AKS: 3rd hands-on"
+pageTitle= 'AKS hands-on: 4th episode - Limits and Requests'
+description= "AKS hands-on: 4th episode - Limits and Requests"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor=""/>
    ms.date="11/12/2023"
    ms.author="fabferri" />
 
-# Azure Kubernetes Service (AKS): 3rd hands-on - Limits and Requests
+# AKS hands-on: 4th episode - Limits and Requests
 
 ### <a name="login in azure subscription"></a> STEP 1: Login in the Azure subscription and create the Kubernetes cluster
 The following setup has been done in Windows host with Azure CLI installed locally.

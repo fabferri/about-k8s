@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS: hands-on with MySQL  - part 2'
-description= "AKS: hands-on with MySQL - part 2"
+pageTitle= 'AKS hand-on: 5th episode with MySQL - part 2'
+description= "AKS hand-on: 5th episode with MySQL - part 2"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor="fabferri"/>
    ms.date="19/12/2023"
    ms.author="fabferri" />
 
-# Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 2
+# AKS hand-on: 5th episode with MySQL - part 2
 In the [Azure Kubernetes Service (AKS): 4th hands-on with MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-4th-hands-on-mysql-part1) is described how to deploy a MySQL using a Permant Volume with Azure file. This hands-on assumes that you have read and run the part 1 and yu have acquired the the concepts of build-in StorageClass and Permant Volume.
 <br>
 
