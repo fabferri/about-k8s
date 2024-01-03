@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= ' AKS hand-on episode 5: MySQL - part 2'
-description= " AKS hand-on episode 5: MySQL - part 2"
+pageTitle= ' AKS hand-on episode 6: MySQL - part 2'
+description= " AKS hand-on episode 6: MySQL - part 2"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,8 +16,8 @@ editor="fabferri"/>
    ms.date="19/12/2023"
    ms.author="fabferri" />
 
-#  AKS hand-on episode 5: MySQL - part 2
-In the [AKS hand-on episode 5: MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-05-mysql-part1) is described how to deploy a MySQL using a Permant Volume with Azure file. This hands-on assumes that you have read and run the part 1 and yu have acquired the the concepts of build-in StorageClass and Permant Volume.
+#  AKS hand-on episode 6: MySQL - part 2
+In the [AKS hand-on episode 6: MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-06-mysql-part1) is described how to deploy a MySQL using a Permant Volume with Azure file. This hands-on assumes that you have read and run the part 1 and yu have acquired the the concepts of build-in StorageClass and Permant Volume.
 <br>
 
 In this hands-on the MySQL root password is stored in the **03-mysql-secret.yaml** manifest file.

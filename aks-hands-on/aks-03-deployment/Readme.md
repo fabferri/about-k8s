@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS hand-on: episode 2'
-description= "AKS hand-on: episode 2"
+pageTitle= 'AKS hand-on: episode 3'
+description= "AKS hand-on: episode 3"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,17 +16,9 @@ editor=""/>
    ms.date="11/12/2023"
    ms.author="fabferri" />
 
-# AKS hand-on: episode 2
-Kubernetes objects are persistent entities in the Kubernetes system. A Kubernetes object is a "<ins>record of intent</ins>"--once you create the object, the Kubernetes system will constantly work to ensure that object exists. <br>
-By creating  objects, you're effectively telling the Kubernetes system what is your cluster's desired state. In Kubernetes the YAML manifest file defines the desire state. <br>
+# AKS hand-on: episode 3
 
-Basic objects include:
-- **Pod**. A group of one or more containers. Kubernetes uses pods to run an instance of your application. A pod represents a single instance of your application. Pods typically have a 1:1 mapping with a container. In advanced scenarios, a pod may contain multiple containers. Multi-container pods are scheduled together on the same node, and allow containers to share related resources. A pod is a logical resource, but application workloads run on the containers. Pods are typically ephemeral, disposable resources.
-- **Service**. An abstraction that defines a logical set of pods as well as the policy for accessing them.
-- **Volume**. An abstraction that lets us persist data. (This is necessary because containers are ephemeral—meaning data is deleted when the container is deleted.)
-- **Namespace**. Namespaces provides a mechanism for isolating groups of resources within a single cluster. Names of resources need to be unique within a namespace, but not across namespaces. Namespace-based scoping is applicable only for namespaced objects. Namespaces are a way to divide cluster resources between multiple users (via resource quota).
-
-A **deployment** is an abstraction to the **pod**. It allows you to have extra functionality and control on top of the pod to say how many instances of a pod you want to run across nodes or if you want to define your rolling update strategy. This allows you to control your deployments based on your requirements in order to have zero downtime as you bring up a new process and deprecate old ones. <br>
+A Kubernetes **deployment** is an abstraction to the **pod**. It allows you to have extra functionality and control on top of the pod to say how many instances of a pod you want to run across nodes or if you want to define your rolling update strategy. This allows you to control your deployments based on your requirements in order to have zero downtime as you bring up a new process and deprecate old ones. <br>
 In Kubernetes manifest file, the **Deployment** makes the following tasks: 
 - creates the pods (defines the number of pod replicas to create),
 - create and update a set of identical pods,

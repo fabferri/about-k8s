@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS hand-on episode 1: imperative'
-description= "AKS hand-on episode 1: imperative"
+pageTitle= 'Kubernetes overview'
+description= "AKS hand-on episode 1: overview"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,93 +16,65 @@ editor="fabferri"/>
    ms.date="19/12/2023"
    ms.author="fabferri" />
 
-# AKS hand-on episode 1: imperative
+# Kubernetes architecture
+Kubernetes is an open-source orchestation platform. it automate the deployment, scaling and management of containeized applications.
+Kubernetes cluster use a set of hosts/VMs named Nodes that are used to run containerized applications.
 
-**kubectl** is a Kubernetes command line tool for communicating with a Kubernetes cluster's control plane, using the Kubernetes API.
-The **kubectl** command-line tool supports several different ways to create and manage Kubernetes objects:
-- **imperative**. Using imperative commands, a user operates directly on live objects in a cluster. This is the recommended way to get started or to run a one-off task in a cluster. 
-- **declarative**. A YAML (or JASON) file, named manifest, must contain a full definition of the objects. Objects configuration requires basic understanding of the object schema for writing correct YAML files.
-Using imperative command is faster and less prone to errors than declarative. <br>
+[![1]][1]
 
-NOTE: the classification above is not accurate but enough for the hand-on purpose. For a better definition see the [official Kubernetes documentation](https://kubernetes.io/).
+There are two core pices in kubernetes cluster: 
+- **control plane**: it is repsosiabile to manage the state of the cluster
+- **worker nodes**: it is a set of nodes run the containerized workloads
 
-The article walks you through some basic useful **kubectl** commands. <br>
-Below a list of commands discussed in this post
-- `kubectl run`: it is used only to creates 1 or more instances of a container image on your cluster.
-- `kubectl create`: it is used to create different type of Kubernetes resources (i.e. deployments, replicasets, services, etc.)
+[![2]][2]
 
-Examples: <br>
-- `kubectl run mypod --image=nginx` : Create a pod with nginx image
-- `kubectl get pod` : show the pods
-- `kubectl get pod -o yaml` : show the pod in yaml format. it contains information about the status of the pod.
-- `kubectl run mypod --image=nginx -o yaml --dry-run=client` : the **--dry-run=client** flag shows the preview the object that would be sent to your cluster, without really submitting it.
-- `kubectl create --help` : show all the option can be used with the command
-- `kubectl create deploy my-deploy --image=nginx --replicas=1`: create the deployment
-- `kubectl get deploy` : get the deployment
+Pods are managed by Kubernetes control plane:
 
-Subcommands: <br>
-- `kubectl set` : modify the image in the deployment
-- `kubectl label`
-- `kubectl scale` : scale out/shrink the number of POD
-- `kubectl edit`
+[![3]][3]
 
-examples: <br>
-- `kubectl set image deploy my-deploy *=nginx:1.19` : set a specific image version, i.e. update the image of existing deployment <br>
-- `kubectl describe pod my-deploy-xxxx`  : check the deployment
-- `kubectl describe pod my-deploy-xxxxx | grep -i image` : filtering the command outcome by grep to discover the image of the pod
-- `kubectl set --help` : help to see all the options with set command
+The **API server** is the primary interface between the control plane and the rest of the cluster.
+it exposes the RESTful API that allows clients to interact with control plane. <br>
 
-- `kubectl scale deploy my-deploy --replicas=2` : scale the deployment from 1 to 2
-- `kubectl rollout status deploy my-deploy` : to check if the pod has been successful rollout
-- `kubectl rollout history deploy my-deploy` : see the change. if the change has not been recorded the filed is empty
-- `kubectl edit deploy my-deploy` : editor is open, we can change the attribute we want
+**ectd** is distributed key-value store. it store the cluster's persistent state. it is used by APIserver and other compoenents of the control plane to store and retrieve information about the cluster.
 
-- `kubectl get <resource> --show-labels` : it shows the labels apply to the resource, i.e. pods
-- `kubectl get <resource> -o wide` : more details about the specific resources
+[![4]][4]
 
-- `kubectl get pod -o wide`   : show the IP of the POD
-- `kubectl get node -o wide`  : show the IP of the nodes
-- `kubectl get node --show-labels` : show the labels assigned to the nodes
-- `kubectl expose pod mypod --name mypod-svc --port=80`    : to see the selector for 
-- `kubectl get svc`  : show the service
-- `kubectl get svc -o wide` : show the service including selector
-- `kubectl describe pod mypod | grep -i image` : to see the image running in the POD
-- `kubectl describe pod mypod | grep -i image -A 2` : to see the image running in the POD with subsequent two lines
-- `kubectl get pod mypod -o jsonpath='{.spec.containers[*].image}'` : to see the image in the pod
-- `kubectl delete pod mypod --force`   : terminate fast the pod. Without --force takes longer for timeout and graceful delete
-- `kubectl explain pod.spec.containers` : gets documentation of various resources
-   `kubectl explain pod.spec.containers.readinessProbe` <br>
-   `kubectl explain pod.spec.containers.readinessProbe.httpGet` <br>
+The core compoenents of kubernetes that run on the worker nodes include kubelet, container runtime and kube-proxy:
+
+[![5]][5]
+
+- **kubelet** is daemon that runs on each worker node. It is responsible for communication with the control plane. it receive instruction from the control plane about which pods to run on the node, and ensure that the desired state of the pods is maintained. <br>
+- the **container runtime** runs the conteninrs on the worker nodes. it is resposibile for pulling the container images from the registry, starting and stopping the container and managing the container's resources.
+- **kube-proxy** is a network proxy that runs on each worker node. it is resposabile for routing traffic to the correct pods. it also provide load balacing for the pods and ensure that traffic is distributed across the pods.
 
 
 
-### Create a pod yaml file without actually creating the pod
-On day-to-day operations in Kubernetes, it is frequent utilization of the **kubectl flag --dry-run=client** to generate definitions of objects in yaml. By pairing it with **-o yaml**, you can printout the yaml file on the terminal:
-```bash
-kubectl run nginx --image=nginx --dry-run=client -o yaml
-```
-This will output a yaml file you can then apply/create or update a pod as needed:
-```
-apiVersion: v1
-kind: Pod
-metadata:
-  creationTimestamp: null
-  labels:
-    run: nginx
-  name: nginx
-spec:
-  containers:
-  - image: nginx
-    name: nginx
-    resources: {}
-  dnsPolicy: ClusterFirst
-  restartPolicy: Always
-status: {}
-```
 
-For more [details and command output](./show-commands.md)
+### <a name="Kubernetes objects"></a> Kubernetes objects
+
+Kubernetes objects are persistent entities in the Kubernetes system. A Kubernetes object is a "<ins>record of intent</ins>"--once you create the object, the Kubernetes system will constantly work to ensure that object exists. <br>
+By creating  objects, you're effectively telling the Kubernetes system what is your cluster's desired state. In Kubernetes the YAML manifest file defines the desire state. <br>
+
+Basic objects include:
+- **Pod**. Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A pod is group of one or more containers. Kubernetes uses pods to run an instance of your application. A pod is a logical resource, but application workloads run on the containers. Pods are typically ephemeral, disposable resources. Pods in a Kubernetes cluster are used in two main ways:
+   - **Pods that run a single container**. The "one-container-per-Pod" model is the most common Kubernetes use case; in this case, you can think of a Pod as a wrapper around a single container. Kubernetes manages Pods rather than managing the containers directly.
+   - **Pods that run multiple containers** that need to work together. A Pod can encapsulate an application composed of multiple co-located containers. Pods provides shared storage and networking for those containers.
+- **Service**. it is a method for exposing a network application that is running as one or more Pods.
+- **Volume**. An abstraction that lets us persist data. (This is necessary because containers are ephemeral—meaning data is deleted when the container is deleted.)
+- **Namespace**. Namespaces provides a mechanism for isolating groups of resources within a single cluster. Names of resources need to be unique within a namespace, but not across namespaces. Namespace-based scoping is applicable only for namespaced objects. Namespaces are a way to divide cluster resources between multiple users (via resource quota).
 
 
+
+
+
+<!--Image References-->
+[1]: ./media/01.png "high level "
+[2]: ./media/02.png "Azure file automatically created into Azure Storage Account"
+[3]: ./media/03.png "components in Kubernetes control plane"
+[4]: ./media/04.png "etcd"
+[5]: ./media/05.png "etcd"
+
+<!--Link References-->
 
 
 
