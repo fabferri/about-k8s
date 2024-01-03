@@ -17,13 +17,13 @@ editor="fabferri"/>
    ms.author="fabferri" />
 
 # Kubernetes architecture
-Kubernetes is an open-source orchestation platform. it automate the deployment, scaling and management of containeized applications.
+Kubernetes is an open-source orchestration platform. It automates the deployment, scaling and management of containerized applications.
 Kubernetes cluster use a set of hosts/VMs named Nodes that are used to run containerized applications.
 
 [![1]][1]
 
-There are two core pices in kubernetes cluster: 
-- **control plane**: it is repsosiabile to manage the state of the cluster
+There are two core pieces in Kubernetes cluster: 
+- **control plane**: it is responsible to manage the state of the cluster
 - **worker nodes**: it is a set of nodes run the containerized workloads
 
 [![2]][2]
@@ -35,17 +35,17 @@ Pods are managed by Kubernetes control plane:
 The **API server** is the primary interface between the control plane and the rest of the cluster.
 it exposes the RESTful API that allows clients to interact with control plane. <br>
 
-**ectd** is distributed key-value store. it store the cluster's persistent state. it is used by APIserver and other compoenents of the control plane to store and retrieve information about the cluster.
+**ectd** is distributed key-value store. it stores the cluster's persistent state. it is used by APIserver and other components of the control plane to store and retrieve information about the cluster.
 
 [![4]][4]
 
-The core compoenents of kubernetes that run on the worker nodes include kubelet, container runtime and kube-proxy:
+The core components of Kubernetes that run on the worker nodes include kubelet, container runtime and kube-proxy:
 
 [![5]][5]
 
-- **kubelet** is daemon that runs on each worker node. It is responsible for communication with the control plane. it receive instruction from the control plane about which pods to run on the node, and ensure that the desired state of the pods is maintained. <br>
-- the **container runtime** runs the conteninrs on the worker nodes. it is resposibile for pulling the container images from the registry, starting and stopping the container and managing the container's resources.
-- **kube-proxy** is a network proxy that runs on each worker node. it is resposabile for routing traffic to the correct pods. it also provide load balacing for the pods and ensure that traffic is distributed across the pods.
+- **kubelet** is daemon that runs on each worker node. It is responsible for communication with the control plane. it receives instruction from the control plane about which pods to run on the node, and ensure that the desired state of the pods is maintained. <br>
+- the **container runtime** runs the containers on the worker nodes. it is responsible for pulling the container images from the registry, starting and stopping the container and managing the container's resources.
+- **kube-proxy** is a network proxy that runs on each worker node. it is resposabile for routing traffic to the correct pods. it also provides load balancing for the pods and ensure that traffic is distributed across the pods.
 
 
 
@@ -53,7 +53,7 @@ The core compoenents of kubernetes that run on the worker nodes include kubelet,
 ### <a name="Kubernetes objects"></a> Kubernetes objects
 
 Kubernetes objects are persistent entities in the Kubernetes system. A Kubernetes object is a "<ins>record of intent</ins>"--once you create the object, the Kubernetes system will constantly work to ensure that object exists. <br>
-By creating  objects, you're effectively telling the Kubernetes system what is your cluster's desired state. In Kubernetes the YAML manifest file defines the desire state. <br>
+By creating objects, you're effectively telling the Kubernetes system what is your cluster's desired state. In Kubernetes the YAML manifest file defines the desire state. <br>
 
 Basic objects include:
 - **Pod**. Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A pod is group of one or more containers. Kubernetes uses pods to run an instance of your application. A pod is a logical resource, but application workloads run on the containers. Pods are typically ephemeral, disposable resources. Pods in a Kubernetes cluster are used in two main ways:
@@ -68,11 +68,11 @@ Basic objects include:
 
 
 <!--Image References-->
-[1]: ./media/01.png "high level "
-[2]: ./media/02.png "Azure file automatically created into Azure Storage Account"
-[3]: ./media/03.png "components in Kubernetes control plane"
+[1]: ./media/01.png "high level architecture based on control plane and worker nodes"
+[2]: ./media/02.png "control plane and worker nodes"
+[3]: ./media/03.png "containers running in the pods"
 [4]: ./media/04.png "etcd"
-[5]: ./media/05.png "etcd"
+[5]: ./media/05.png "components in the worker nodes"
 
 <!--Link References-->
 
