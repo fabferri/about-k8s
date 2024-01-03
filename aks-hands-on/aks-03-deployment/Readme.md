@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS hand-on: episode 3'
-description= "AKS hand-on: episode 3"
+pageTitle= 'AKS hands-on episode 3: deployment'
+description= "AKS hands-on episode 3: deployment"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor=""/>
    ms.date="11/12/2023"
    ms.author="fabferri" />
 
-# AKS hand-on: episode 3
+# AKS hands-on episode 3: deployment
 
 A Kubernetes **deployment** is an abstraction to the **pod**. It allows you to have extra functionality and control on top of the pod to say how many instances of a pod you want to run across nodes or if you want to define your rolling update strategy. This allows you to control your deployments based on your requirements in order to have zero downtime as you bring up a new process and deprecate old ones. <br>
 In Kubernetes manifest file, the **Deployment** makes the following tasks: 
