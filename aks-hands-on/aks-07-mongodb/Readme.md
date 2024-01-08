@@ -307,8 +307,12 @@ user
 mydb> db.test.help()
 ```
 
+### <a name="MongoDB"></a>7. Delete all the MongoDB deployment
+```Console
+kubectl delete -f .
+```
 
-### <a name="Base64"></a>7. ANNEX: Base64 encoding/deconding
+### <a name="Base64"></a>8. ANNEX: Base64 encoding/deconding
 Base64 encoding is a format designed to prevent communication “mishaps” during the transfer of binary information. It achieves this through the conversion of binary data and a “lookup table” — data is eventually made in a stream of ASCII characters, which can then be transmitted and decoded. 
 - On base 64 encoded data, the resultant string is always larger than the original (i.e. this is not a compression algorithm). - base 64 does not encrypt any information — it uses a “standard” table of characters to encode and decode information. 
 - using base 64 encoding is a reliable way to ensure that a transmission of binary information is never misinterpreted.
