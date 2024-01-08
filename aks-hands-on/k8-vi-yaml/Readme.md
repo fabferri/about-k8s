@@ -60,8 +60,8 @@ filetype plugin indent on
 
 In vim to jump to a specific line use: row_number + G
 
-### <a name="enhanced customization of vim"></a>2. vim - Indenting with > and n>
-if you have an AKS cluster, you can create a basic yaml file for an NGINX Pod:
+### <a name="vim indenting with >"></a>2. vim - Indenting with > and n>
+If you have an AKS cluster, you can create a basic yaml file for an NGINX Pod:
 ```bash
 kubectl run mypod --image=nginx --dry-run=client -o yaml > mypod.yaml
 ```
@@ -234,7 +234,7 @@ Push the key **>** to shift the selected block to the right:
 
 We have now the righ format.
 
-### <a name="enhanced customization of vim"></a>2. Annex: enhanced customization of vim
+### <a name="enhanced customization of vim"></a>4. Annex: enhanced customization of vim
 For enhanced customization of vim add the **~/.vimrc** file the following statements:
 ```vim
 " Disable compatibility with vi which can cause unexpected issues.
@@ -311,7 +311,9 @@ set hlsearch
 set history=1000
 ```
 
+### <a name="reference"></a>5. Reference
 
+https://kube.academy/courses/how-to-prepare-for-the-cka-exam/lessons/editing-yaml-with-vim
 
 `Tags: AKS` <br>
 `date: 29-12-23`
