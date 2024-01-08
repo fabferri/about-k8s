@@ -8,5 +8,5 @@
    - [AKS hands-on episode 3: deployment](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-03-deployment)
    - [AKS hands-on episode 4: persistent storage](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-04-persistent-storage)
    - [AKS hands-on episode 5: Limits and Requests](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-05-limits-and-requests)
-   - [AKS hands-on episode 6: MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-05-mysql-part1)
+   - [AKS hands-on episode 6: MySQL - part 1](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-06-mysql-part1)
    - [AKS hands-on episode 5: MySQL - part 2](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-05-mysql-part2)
