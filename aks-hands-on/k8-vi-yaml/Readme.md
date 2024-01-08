@@ -60,7 +60,7 @@ filetype plugin indent on
 
 In vim to jump to a specific line use: row_number + G
 
-### <a name="enhanced customization of vim"></a>2. vim - Indenting with > and <
+### <a name="enhanced customization of vim"></a>2. vim - Indenting with > and n>
 if you have an AKS cluster, you can create a basic yaml file for an NGINX Pod:
 ```bash
 kubectl run mypod --image=nginx --dry-run=client -o yaml > mypod.yaml
