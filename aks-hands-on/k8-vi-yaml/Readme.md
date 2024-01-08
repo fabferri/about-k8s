@@ -60,7 +60,7 @@ filetype plugin indent on
 
 In vim to jump to a specific line use: row_number + G
 
-### <a name="enhanced customization of vim"></a>2. vim - Indenting with > and n>
+### <a name="enhanced customization of vim"></a>2. vim - Indenting with > and <
 if you have an AKS cluster, you can create a basic yaml file for an NGINX Pod:
 ```bash
 kubectl run mypod --image=nginx --dry-run=client -o yaml > mypod.yaml
@@ -120,7 +120,7 @@ When all the test is selected, press the key **"2"** + **">"** and all the text 
 The yaml has now the right format.
 
 - The sequence **n** + **">"** allows to indent the selected block shiting to the right.
-- The sequence **n** + **"<"** allows to indent the selected block shiting to the left.
+- The sequence **n** + **"<"** allows to indent the selected block shiting to the left. <br>
 **n** is the number of two space to apply the shift unit. <br>
 
 ### <a name="enhanced customization of vim"></a>3. vim - :retab and :set list
