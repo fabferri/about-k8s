@@ -25,8 +25,6 @@ It is frequest cut and paste from Kubenetes documentation snippet of yaml (i.e. 
 Let's dscuss some tips to facilitate the creation/editing of yaml manifest files.
 
 
-https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/
-
 ### <a name=".vimrc file"></a>1. Configuring the .vimrc file
 The **.vimrc** file control the vim behavior. Let's create an essential configuration adding some properties to the **.vimrc** file for editing yaml.
 
@@ -58,7 +56,7 @@ filetype plugin indent on
 |`syntax enable`             | turn on color syntax highlighting.       |
 |`filetype plugin indent on` | it is like a combination of these commands: <br> `filetype on` <br> `filetype plugin on` <br> `filetype indent on` |
 
-In vim to jump to a specific line use: row_number + G
+
 
 ### <a name="vim indenting with >"></a>2. vim - Indenting with > and n>
 If you have an AKS cluster, you can create a basic yaml file for an NGINX Pod:
@@ -232,7 +230,32 @@ Push the key **>** to shift the selected block to the right:
 
 [![11]][11]
 
-We have now the righ format.
+We have now the righ format. <br> <br>
+
+
+Vim provides an alternative straight way to paste the digital certificate content in a yaml. Edit by vim the yaml file, position the cursor in the section to be inserted the digital certificate:
+
+[![12]][12]
+
+In command mode use the command **:! ls** to exit the Vim text editor and get the list of file in the directory:
+
+[![13]][13]
+
+The command **ls** runs in the shell and allows to pickup the filename of certificate:
+
+[![14]][14]
+
+We can make all in single step by the command: **:read !base64 certificate-request.pem**
+
+[![15]][15]
+
+
+
+The digital certificate is right imported in the yaml file:
+
+[![16]][16]
+
+Press **SHIT+V** to enter in visual mode, select the digital certificate and apply indententation by **>** 
 
 ### <a name="enhanced customization of vim"></a>4. Annex: enhanced customization of vim
 For enhanced customization of vim add the **~/.vimrc** file the following statements:
@@ -267,11 +290,11 @@ set cursorcolumn
 
 Common settings:
 ```vim
-" Set shift width to 4 spaces.
-set shiftwidth=4
+" Set shift width to 2 spaces.
+set shiftwidth=2
 
-" Set tab width to 4 columns.
-set tabstop=4
+" Set tab width to 2 columns.
+set tabstop=2
 
 " Use space characters instead of tabs.
 set expandtab
@@ -332,5 +355,10 @@ https://kube.academy/courses/how-to-prepare-for-the-cka-exam/lessons/editing-yam
 [9]: ./media/09.png
 [10]: ./media/10.png
 [11]: ./media/11.png
+[12]: ./media/12.png
+[13]: ./media/13.png
+[14]: ./media/14.png
+[15]: ./media/15.png
+[16]: ./media/16.png
 
 <!--Link References-->
