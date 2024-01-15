@@ -129,7 +129,7 @@ psql -h localhost -p 5432 -U postgres -W
 The command prompt for **postgres** password: this is the password specified in **postgre-secret.yaml** manifest file.
 When login inside the PostgreSQL the prompt appears: **postgres=#**  <br>
 Run the following PostGreSQL commands:
-```
+```SQL
 select version();
 CREATE DATABASE db1;
 CREATE USER user1 WITH ENCRYPTED PASSWORD 'user1password';
