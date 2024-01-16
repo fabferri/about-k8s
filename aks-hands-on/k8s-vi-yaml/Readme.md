@@ -21,8 +21,8 @@ When you create an object in Kubernetes, you must provide the object spec that d
 The yaml files are used with **kubectl** to create, modify, update the objects. <br>
 Tools such as **kubectl** convert the information from a manifest file into JSON or another supported serialization format when making the API request over HTTP. <br>
 In Linux the yaml manifest files are create and modify with **vim**. <br>
-It is frequest cut and paste from Kubenetes documentation snippet of yaml (i.e. create a POD a deployment with request and limit, etc.). To be valid the yaml manifest files require the right indentation. <br>
-Let's dscuss some tips to facilitate the creation/editing of yaml manifest files.
+It is frequent cut and paste from Kubernetes documentation snippet of yaml (i.e. create a POD a deployment with request and limit, etc.). To be valid the yaml manifest files require the right indentation. <br>
+Let's discuss some tips to facilitate the creation/editing of yaml manifest files.
 
 
 ### <a name=".vimrc file"></a>1. Configuring the .vimrc file
@@ -117,8 +117,8 @@ When all the test is selected, press the key **"2"** + **">"** and all the text 
 
 The yaml has now the right format.
 
-- The sequence **n** + **">"** allows to indent the selected block shiting to the right.
-- The sequence **n** + **"<"** allows to indent the selected block shiting to the left. <br>
+- The sequence **n** + **">"** allows to indent the selected block shifting to the right.
+- The sequence **n** + **"<"** allows to indent the selected block shifting to the left. <br>
 **n** is the number of two space to apply the shift unit. <br>
 
 ### <a name="enhanced customization of vim"></a>3. vim - :retab and :set list
@@ -144,7 +144,7 @@ spec:
         memory: "128Mi"
         cpu: "500m"
 ```
-This is visibile by presence of **^I**. <br> 
+This is visible by presence of **^I**. <br> 
 Open the file **mypod3-with-tab.yaml** by vim; to see the presence of wrong characters, use the command: **set list**
 
 [![5]][5]
@@ -209,7 +209,7 @@ Open by vim the file csr1.yaml:
 
 [![7]][7]
 
-In vim, position the cursor at beginning of certificate abd press **SHIT+V** to enter in visual mode. Moving the arrow down to select all the digital certificate:
+In vim, position the cursor at beginning of certificate and press **SHIT+V** to enter in visual mode. Moving the arrow down to select all the digital certificate:
 
 [![8]][8]
 push the key **d**.
@@ -230,7 +230,7 @@ Push the key **>** to shift the selected block to the right:
 
 [![11]][11]
 
-We have now the righ format. <br> <br>
+We have now the right format. <br> <br>
 
 
 Vim provides an alternative straight way to paste the digital certificate content in a yaml. Edit by vim the yaml file, position the cursor in the section to be inserted the digital certificate:
@@ -241,7 +241,7 @@ In command mode use the command **:! ls** to exit the Vim text editor and get th
 
 [![13]][13]
 
-The command **ls** runs in the shell and allows to pickup the filename of certificate:
+The command **ls** runs in the shell and allows to pick up the filename of certificate:
 
 [![14]][14]
 
@@ -255,7 +255,7 @@ The digital certificate is right imported in the yaml file:
 
 [![16]][16]
 
-Press **SHIT+V** to enter in visual mode, select the digital certificate and apply indententation by **>** 
+Press **SHIT+V** to enter in visual mode, select the digital certificate and apply indentation by **>** 
 
 ### <a name="enhanced customization of vim"></a>4. Annex: enhanced customization of vim
 For enhanced customization of vim add the **~/.vimrc** file the following statements:
