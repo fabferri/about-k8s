@@ -46,8 +46,8 @@ data:
     mongo-root-username: dXNlcm5hbWU=
     mongo-root-password: cGFzc3dvcmQ=
 ```
-Kubernetes provides diffent type of Secrets; in the specific case discussed here **type: Opaque** <br>
-The Secret resource contains the **data** field, used to store arbitrary data in format of dictionaly, with values base64 encoded. <br>
+Kubernetes provides different type of Secrets; in the specific case discussed here **type: Opaque** <br>
+The Secret resource contains the **data** field, used to store arbitrary data in format of dictionary, with values base64 encoded. <br>
 
 Convert the strings to base64 coding:
 ```bash
@@ -128,7 +128,7 @@ volumeBindingMode: WaitForFirstConsumer
 For more information about [default storageclass](https://kubernetes.io/docs/concepts/storage/storage-classes/#default-storageclass)
 <br>
 
-In the default StorageClass is possibile to filter only the value assigned to **storageclass.kubernetes.io/is-default-class**:
+In the default StorageClass is possible to filter only the value assigned to **storageclass.kubernetes.io/is-default-class**:
 ```bash
 kubectl get storageclass default -o=jsonpath='{.metadata.annotations.storageclass\.kubernetes\.io/is-default-class}{"\n"}'
 true
@@ -143,7 +143,7 @@ Cluster administrators can address issues like this by setting the volume bindin
 After you create the PersistentVolumeClaim, the Kubernetes control plane looks for a PersistentVolume that satisfies the claim's requirements. If the control plane finds a suitable PersistentVolume with the same StorageClass, it binds the claim to the volume. <br>
 For dynamically provisioned PersistentVolumes, the default reclaimPolicy field is "Delete". This means that a dynamically provisioned volume is automatically deleted when a user deletes the corresponding PersistentVolumeClaim. <br>
 
-In our case the PersistentVolumeClaim is created without storageClassName set, than the default StorageClass is used that has a **provisioner: disk.csi.azure.com** and **reclaimPolicy: Delete** <br>
+In our case the PersistentVolumeClaim is created without storageClassName set, then the default StorageClass is used that has a **provisioner: disk.csi.azure.com** and **reclaimPolicy: Delete** <br>
 
 ```yaml
 apiVersion: v1
@@ -174,7 +174,7 @@ spec:
       storage: 20Gi
 ```
 The persistent volume defined in **mysql-pv.yaml** creates a volume using a **storageClassName: manual**. <br>
-**storageClassName: manual** is an arbitrary name as it does not require CSI driver to provision volume. It's an arbitrary name that you can used in PV/PVC with local volumes. Local volumes do not support dynamic provisioning; however a StorageClass should still be created to delay volume binding until a Pod is actually scheduled to the appropriate node. This is specified by the <ins>WaitForFirstConsumer</ins> volume binding mode.
+**storageClassName: manual** is an arbitrary name as it does not require CSI driver to provision volume. It's an arbitrary name that you can used in PV/PVC with local volumes. Local volumes do not support dynamic provisioning; however, a StorageClass should still be created to delay volume binding until a Pod is actually scheduled to the appropriate node. This is specified by the <ins>WaitForFirstConsumer</ins> volume binding mode.
 
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -202,12 +202,11 @@ kubectl apply -f mongo.yaml
 The MongoDB image is in hub.docker.com
 
 
-kubectl get secret
-
 ### <a name="MongoDB"></a>6. Verification
 
-After the deployment use the following command for verification:
+After the deployment use the following commands for verification:
 ```console
+kubectl get secret
 kubectl get pv
 kubectl get pvc
 kubectl get service
@@ -221,7 +220,7 @@ Verifing that the pod is running:
 ```bash
 kubectl get pods -o wide
 ```
-The command shows the name of pod, it cna be used to connect to the container. <br>
+The command shows the name of pod, it can be used to connect to the container. <br>
 Connect to the container:
 ```Console
 kubectl exec <Pod_Name> -it -- /bin/bash
@@ -271,7 +270,7 @@ test> db
 test
 ```
 
-There is no "create" command in the MongoDB Shell. In order to create a database, you will first need to switch the context to a non-existing database using the use command:
+There is no "create" command in the MongoDB Shell. To create a database, you will first need to switch the context to a non-existing database using the use command:
 
 ```console
 test> use mydb
