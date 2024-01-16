@@ -1,7 +1,7 @@
 
 <properties
-pageTitle= 'AKS: MongoDB hands-on'
-description= "AKS: MongoDB hands-on"
+pageTitle= 'AKS hands-on: MongoDB'
+description= "AKS hands-on: MongoDB"
 services="AKS"
 documentationCenter="https://github.com/fabferri/"
 authors="fabferri"
@@ -16,7 +16,7 @@ editor=""/>
    ms.date="11/12/2023"
    ms.author="fabferri" />
 
-# AKS: MongoDB hands-on
+# AKS hands-on: MongoDB
 The article delves into the deployment of MongoDB in AKS cluster.
 
 ### <a name="login in azure subscription"></a>1. File list
