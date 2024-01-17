@@ -16,7 +16,7 @@ editor="fabferri"/>
    ms.date="02/01/2024"
    ms.author="fabferri" />
 
-# AKS hands-on: deployment of PostgreSQL with kustomize
+# AKS hands-on: PostgreSQL with kustomize
 This hands-on shows you how to deploy a **single-instance stateful application** in Kubernetes using a PersistentVolume (PV) and a deployment. The deployment uses kubectl commands on an existing Kubernetes cluster and deploys a PostgreSQL. <br>
 The resources will be created in the order they appear in the YAML file. Therefore, it's best to specify the service first, since that will ensure the scheduler can spread the pods associated with the service as they are created by the controller(s), such as Deployment.
 The PostgreSQL deployment can be done running multiple `kubectl apply` commands in sequence with manifest files. There is a more structured way to run the deployment through  **kustomize**, a software configuration management tool. The hands-on discuss about the deployment created by **kustomize**.
