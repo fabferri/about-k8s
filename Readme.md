@@ -12,4 +12,5 @@
    - [AKS hands-on episode 6: MySQL - part 2](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-06-mysql-part2)
    - [AKS hands-on episode 7: MongoDB](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-07-mongodb)
    - [AKS hands-on episode 8: Deployment of PostgreSQL with kustomize](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-08-postgresql)
+   - [AKS hands-on episode 9: WordPress](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-09-wordpress)
 - [Kubernetes: edit yaml with vim](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/k8s-vi-yaml)
