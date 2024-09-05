@@ -207,6 +207,7 @@ You can now check out the presence of index.html file in Azure file and verifyin
 
 `Tags: aks` <br>
 `date: 19-12-23`
+`date: 05-09-23 add k8s.sh`
 
 
 <!--Image References-->
