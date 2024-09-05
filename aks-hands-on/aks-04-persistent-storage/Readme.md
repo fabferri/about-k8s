@@ -68,7 +68,8 @@ The following setup has been done in Windows host with Azure CLI installed local
 - `az account list --query "[?name=='AzureDemo'].id" --output tsv` - Get the Azure subscription ID
 - `$SubId="$(az account list --query "[?name=='AzureDemo'].id" --output tsv)"; az account set --subscription $SubId`  - Change the active subscription (powershell)
 - `az aks install-cli` - (<ins>Optional</ins>) - One time operation if you do not have aks command installed 
-- `az aks create -g $rg -n $clusterName --enable-managed-identity --node-count 2 --ssh-key-value $SSH` - Create the Kubernetes cluster with two nodes
+- `az aks create -g $rg -n $clusterName --enable-managed-identity --node-count 2 --ssh-key-value $SSH` - Create the Kubernetes cluster with two nodes. The key to connect in SSH to the node already exists in the ~/.ssh directory.
+- `az aks create -g $rg -n $clusterName --enable-managed-identity --node-count 2 --generate-ssh-keys` - Create the Kubernetes cluster with two nodes. Generate SSH public and private key files if missing. The keys will be stored in the ~/.ssh directory.
 - `az aks get-credentials -g $rg -n $clusterName` - Configure kubectl to connect to the kubernetes cluster
 - `az aks update -g $rg -n $clusterName --enable-file-driver ` - Enable CSI storage drivers on an existing cluster <br>
 
@@ -199,6 +200,19 @@ kubectl cp <localfile> <some-namespace>/<some-pod>:/tmp/bar
 kubectl cp index.html default/nginx-deployment-546cc48f47-27kwd:/usr/share/nginx/html/index.html
 ```
 You can now check out the presence of index.html file in Azure file and verifying with web browser the successful connection to the nginx through public IP.
+
+Basic example of **index.html**:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Home Page</title>
+</head>
+<body>
+  <p>This web page is served by Nginx.</p>
+</body>
+</html>
+```
 
 ### <a name="Manifest files description"></a> Reference
 [Configure a Pod to Use a PersistentVolume for Storage](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)
