@@ -49,7 +49,7 @@ az acr import \
 ```
 - `az acr repository list --name $acrName --output table` - view the images in your ACR instance 
 - `az acr repository show-tags -n $acrName --repository nginx` -show the tag associated with the doker image in the ACR
-- `az aks create -g $rg -n $clusterName  --node-count 2 --enable-managed-identity --generate-ssh-keys --attach-acr $acrName` - Create a new AKS cluster and integrate with an existing ACR 
+- `az aks create -g $rg -n $clusterName  --node-count 2 --enable-managed-identity --generate-ssh-keys --attach-acr $acrName` - Create a new AKS cluster and integrate with an existing ACR. To allow an AKS cluster to interact with other Azure resources, the Azure platform automatically creates a cluster identity. The cluster identity is granted the right to pull images from the ACR instance you created.
 - `az aks get-credentials --resource-group $rg --name $clusterName` - get AKS credentials to connect to your AKS by kubectl 
 - `kubectl get nodes -o wide` - get the list of AKS nodes
 
