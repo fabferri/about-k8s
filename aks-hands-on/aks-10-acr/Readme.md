@@ -53,7 +53,7 @@ az acr import \
 - `az aks get-credentials --resource-group $rg --name $clusterName` - get AKS credentials to connect to your AKS by kubectl 
 - `kubectl get nodes -o wide` - get the list of AKS nodes
 
-Create a manifest file called **acr-nginx.yaml**: 
+Create by bash command a manifest file called **acr-nginx.yaml**: 
 ```bash
 tee acr-nginx.yaml <<EOF
 apiVersion: apps/v1
@@ -91,7 +91,7 @@ and verify nginx is running: <br>
 - `/etc/init.d/nginx status` - check the nginx status 
 - `cat /etc/nginx/conf.d/default.conf` - check the nginx configuration
 
-Create the manifest file **svc.yaml** to deploy the kubernetes service:
+Create by bash command the manifest file **svc.yaml** to deploy the kubernetes service:
 ```bash
 tee svc.yaml <<EOF
 apiVersion: v1
