@@ -23,7 +23,7 @@ Tasks of the hands-on:
 - login in Azure subscription
 - create a ACR
 - copy the standard nginx image from [docker registry](https://hub.docker.com/) to the ACR
-- create a AKS cluster 
+- create a AKS cluster with nginx docker image stored in the ACR
 
 <br>
 
