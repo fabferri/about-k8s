@@ -42,9 +42,13 @@ Specification of Kubernetes service address range (set of virtual IPs that Kuber
 <br>
 
 > [!Note]
-> Nodes of the same configuration are grouped together into node pools. Node pools contain the underlying VMs that run your applications. 
-> System node pools and user node pools are two different node pool modes for your AKS clusters. System node pools serve the primary purpose of hosting critical system pods such as CoreDNS and metrics-server. 
-> User node pools serve the primary purpose of hosting your application pods. 
+>
+> Nodes of the same configuration are grouped together into **node pools**. **Node pools** contain the underlying VMs that run your applications. 
+>
+> **System node pools** and **user node pools** are two different node pool modes for your AKS clusters. System node pools serve the primary purpose of hosting critical system pods such as CoreDNS and metrics-server. 
+>
+> **User node pools** serve the primary purpose of hosting your application pods. 
+>
 > However, application pods can be scheduled on system node pools if you wish to only have one pool in your AKS cluster. 
 > Every AKS cluster must contain at least one system node pool with at least two nodes.
 
