@@ -56,7 +56,11 @@ filetype plugin indent on
 |`syntax enable`             | turn on color syntax highlighting.       |
 |`filetype plugin indent on` | it is like a combination of these commands: <br> `filetype on` <br> `filetype plugin on` <br> `filetype indent on` |
 
-
+> [!Note]
+>
+> In vi to convert a file from windows to unix:
+> **:set fileformat=unix**
+>
 
 ### <a name="vim indenting with >"></a>2. vim - Indenting with > and n>
 If you have an AKS cluster, you can create a basic yaml file for an NGINX Pod:
