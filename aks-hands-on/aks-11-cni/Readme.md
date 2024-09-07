@@ -191,7 +191,7 @@ EOF
 ```
 
 - `kubectl apply -f nginx.yaml` - deployment of manifest file
-- `kubectl get pods` - view the deployment
+- `kubectl get pods -o wide` - view the deployment
 ```console
 kubectl get pods -o wide
 NAME                                READY   STATUS    RESTARTS   AGE     IP            NODE                                NOMINATED NODE   READINESS GATES
