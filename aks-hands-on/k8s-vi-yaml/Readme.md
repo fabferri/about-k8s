@@ -59,6 +59,7 @@ filetype plugin indent on
 > [!Note]
 >
 > In vi to convert a file from windows to unix:
+>
 > **:set fileformat=unix**
 >
 
