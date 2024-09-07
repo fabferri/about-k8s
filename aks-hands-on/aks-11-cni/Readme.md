@@ -22,9 +22,9 @@ When you create an AKS cluster for Azure CNI networking are required:
 - a vnet which you want to deploy the  cluster.
 - the subnet within the virtual network where you want to deploy the cluster
 Specification of Kubernetes service address range (set of virtual IPs that Kubernetes assigns to internal services in your cluster) is not mandatory.
-
 <br>
-Tasks of the hands-on:
+
+**Hands-on tasks**: <br>
 - login in Azure subscription
 - create a resource group
 - use Azure CNI networking to create and use a virtual network subnets for an AKS cluster. <br> 
