@@ -64,7 +64,7 @@ Description of the steps executed in **aks-cni.sh** <br>
 - `az account show --output table`              - Show the subscription you are currently using by tabular format <br>
 - `az group create --name $rg --location $location` - create a resource group
 - `subscriptionId=$(az account list --query "[?name=='$subscription'].id" --output tsv)` - store the default subscription in a variable subscriptionId
-- `az network vnet create --resource-group $rg --location $location --name $vnetName --address-prefixes 10.0.0.0/8 -o none` -create a vnet 
+- `az network vnet create --resource-group $rg --location $location --name $vnetName --address-prefixes 10.0.0.0/8 -o none` - create a vnet 
 - `az network vnet subnet create --resource-group $rg --vnet-name $vnetName --name $subnet1Name --address-prefixes 10.240.0.0/16 -o none ` - create a subnet1 for CNI Node
 - `az network vnet subnet create --resource-group $rg --vnet-name $vnetName --name $subnet2Name --address-prefixes 10.241.0.0/16 -o none`  - create a subnet2 for CNI Pod
 - Create the cluster, referencing <br>
