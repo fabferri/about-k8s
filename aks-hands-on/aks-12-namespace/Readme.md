@@ -68,7 +68,6 @@ az aks create \
     --node-count 5 \
     --generate-ssh-keys
 ```
-https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/
 
 - `az aks get-credentials --resource-group $rg --name $clusterName` - get AKS credential to connect with kubectl
 - `kubectl get nodes -o wide` - get nodes
