@@ -29,8 +29,11 @@ Kubernetes starts with four initial namespaces: `default`, `kube-node-lease`, `k
 A namespace can be in one of two phases: 
 - `Active` the namespace is in use
 - `Terminating` the namespace is being deleted
+
 <br>
+
 By default, a Kubernetes cluster will instantiate a default namespace when provisioning the cluster to hold the default set of Pods, Services, and Deployments used by the cluster.
+
 <br>
 
 **Hands-on tasks**: <br>
