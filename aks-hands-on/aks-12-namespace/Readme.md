@@ -16,7 +16,7 @@ editor=""/>
    ms.date="08/09/2024"
    ms.author="fabferri" />
 
-# AKS hands-on: namespace
+# AKS hands-on: namespaces
 Kubernetes namespaces are a method by which a single cluster used by an organization can be divided and categorized into multiple sub-clusters and managed individually.<br>
 Kubernetes namespaces provide a mechanism for isolating groups of resources, such as pods and deployments, within a single cluster. Names of resources need to be unique within a namespace.
 A Kubernetes namespace provides the scope for Pods, Services, and Deployments in the cluster.
@@ -41,18 +41,18 @@ By default, a Kubernetes cluster will instantiate a default namespace when provi
 - create a namespace called development
 - create a namespace called production
 - create pods in each namespace
-  - namspace development with nginx with default homepage
-  - namespace production with custom nginc homepage
+  - namespace production with custom nginx homepage
+  - namespace development with nginx with default homepage
 - connect to the nginx from public IP associated with service 
 
 <br>
 
-### <a name="create the full deployment"></a> Run the bash script aks-cni.sh
-The bash script **aks-cni.sh** contains a description of all steps to execute the full deployment.<br>
-The script **aks-cni.sh**requires you are login in Azure; login in Azure with the device authentication code in the web browser:
+### <a name="create the full deployment"></a> Run the bash script aks-namespaces.sh
+The bash script **aks-namespaces.sh** contains a description of all steps to execute the full deployment.<br>
+The script **aks-namespaces.sh**requires you are login in Azure; login in Azure with the device authentication code in the web browser:
 `az login --use-device-code` 
 
-Description of the steps executed in **aks-cni.sh** <br>
+Description of the steps executed in **aks-namespaces.sh** <br>
 - `az account list --output table`  - Get a list of available subscriptions <br>
 - `az account set --subscription $subscription` - Change the active subscription using the subscription name 
 - `az account show --output table`              - Show the subscription you are currently using by tabular format <br>
