@@ -15,4 +15,5 @@
    - [AKS hands-on 9: WordPress](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-09-wordpress)
    - [AKS hands-on 10: Azure Container Registry (ACR)](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-10-acr)
    - [AKS hands-on 11: Azure CNI with dynamic allocation of IPs](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-11-cni)
+   - [AKS hands-on 12: Namespace](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/aks-12-namespace)
 - [Kubernetes: edit yaml with vim](https://github.com/fabferri/about-k8s/tree/main/aks-hands-on/k8s-vi-yaml)
