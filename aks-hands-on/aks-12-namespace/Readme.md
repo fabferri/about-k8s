@@ -31,8 +31,7 @@ A namespace can be in one of two phases:
 - `Terminating` the namespace is being deleted
 <br>
 By default, a Kubernetes cluster will instantiate a default namespace when provisioning the cluster to hold the default set of Pods, Services, and Deployments used by the cluster.
-
-
+<br>
 
 **Hands-on tasks**: <br>
 - login in Azure subscription
@@ -49,7 +48,8 @@ By default, a Kubernetes cluster will instantiate a default namespace when provi
 
 ### <a name="create the full deployment"></a> Run the bash script aks-namespaces.sh
 The bash script **aks-namespaces.sh** contains a description of all steps to execute the full deployment.<br>
-The script **aks-namespaces.sh**requires you are login in Azure; login in Azure with the device authentication code in the web browser:
+The script **aks-namespaces.sh** requires you are login in Azure. <br> 
+Login in Azure with the device authentication code in the web browser: <br>
 `az login --use-device-code` 
 
 Description of the steps executed in **aks-namespaces.sh** <br>
